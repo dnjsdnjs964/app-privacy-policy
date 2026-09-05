@@ -25,13 +25,18 @@
     <p>개발자는 서비스 제공 및 계정 관리를 위해 다음과 같은 최소한의 개인정보를 수집합니다.</p>
     <ul>
         <li><strong>Google 계정 로그인 시 수집 항목:</strong> 이메일 주소(Gmail), 프로필 이름, 사용자 식별자(Firebase Auth UID)</li>
-        <li><strong>서비스 이용 및 부가 서비스 관련 수집 항목:</strong> 서비스 이용 기록, 기기 식별자, 진단/오류 데이터(Firebase SDK 및 제3자 SDK를 통해 수집)</li>
+        <li><strong>Apple 로그인 시 수집 항목:</strong> 사용자 식별자, 이메일 주소(Apple의 이메일 가리기 사용 시 비공개 릴레이 주소). 이름·이메일은 최초 1회 인증 시에만 제공됩니다.</li>
+        <li><strong>게임 이용 데이터(순위표 기능이 있는 앱):</strong> 게임 점수(최고 기록), 이용자가 설정한 닉네임, 게임 내 재화 수량</li>
+        <li><strong>서비스 이용 및 부가 서비스 관련 수집 항목:</strong> 서비스 이용 기록, 기기 식별자, 광고 식별자 및 광고 상호작용 데이터, 진단/오류 데이터(Firebase SDK 및 제3자 SDK를 통해 수집)</li>
     </ul>
 
     <h2>2. 개인정보의 수집 및 이용 목적</h2>
     <p>수집된 개인정보는 다음의 목적으로만 활용됩니다.</p>
     <ul>
-        <li>Google 계정(Gmail)을 통한 회원 식별 및 인증, 계정 관리</li>
+        <li>Google 또는 Apple 계정을 통한 회원 식별 및 인증, 계정 관리</li>
+        <li>기기 간 게임 진행 상황 동기화</li>
+        <li>전체·주간 순위표 제공(점수 및 닉네임을 다른 이용자에게 공개)</li>
+        <li>앱 내 광고 게재</li>
         <li>앱 서비스 제공, 서비스 장애 및 오류 수정, 품질 개선</li>
     </ul>
 
@@ -41,9 +46,14 @@
     <h2>4. 개인정보의 제3자 제공 및 위탁</h2>
     <p>개발자는 이용자의 개인정보를 외부에 제공하거나 판매하지 않습니다. 단, 안정적인 서비스 운용을 위해 아래의 외부 서비스를 활용합니다.</p>
     <ul>
-        <li><strong>위탁 대상:</strong> Google LLC (Firebase Authentication, Cloud Analytics)</li>
-        <li><strong>위탁 목적:</strong> 계정 인증 및 서비스 오류 분석</li>
+        <li><strong>Google LLC</strong> — Firebase Authentication, Cloud Firestore (계정 인증, 게임 기록 및 순위표 데이터 저장)</li>
+        <li><strong>Google LLC</strong> — Google AdMob (앱 내 광고 제공)</li>
+        <li><strong>Apple Inc.</strong> — Apple로 로그인 (계정 인증)</li>
     </ul>
+        <div class="highlight">
+        <h3>[순위표 공개 안내]</h3>
+        <p>순위표 기능이 있는 앱에서는 이용자의 <strong>최고 점수와 이용자가 설정한 닉네임</strong>이 전체 및 주간 순위표에 업로드되어 <strong>다른 모든 이용자에게 공개</strong>됩니다. 로그인하지 않은 게스트 이용자의 점수도 자동 생성된 닉네임과 함께 순위표에 표시됩니다.</p>
+    </div>
 
     <h2>5. 데이터 보안 및 안전성 확보 조치</h2>
     <p>이용자의 개인정보는 TLS/HTTPS 통신 암호화를 통해 전송되며, Firebase의 인증 및 보안 관리 기준을 적용하여 안전하게 관리됩니다.</p>
@@ -55,7 +65,7 @@
         <h3>[계정 및 데이터 삭제 신청 단계]</h3>
         <p>계정 및 수집된 데이터 삭제를 원하시는 경우 아래 단계를 통해 신청해 주세요.</p>
         <ol>
-            <li>가입에 사용하신 <strong>Gmail 주소</strong>를 확인합니다.</li>
+            <li>가입에 사용하신 <strong>Google 또는 Apple 계정</strong>를 확인합니다.</li>
             <li>개발자 이메일(<strong><a href="mailto:decaffeinesoft@gmail.com">decaffeinesoft@gmail.com</a></strong>)로 <strong>"계정 및 데이터 삭제 요청"</strong>이라는 제목의 메일을 발송합니다. (가입된 Gmail 주소 포함 필수)</li>
             <li>접수 확인 후 <strong>영업일 기준 3일 이내</strong>에 계정 및 관련 모든 데이터가 즉시 영구 파기 처리됩니다.</li>
         </ol>
@@ -65,13 +75,6 @@
     <ul>
         <li><strong>즉시 영구 삭제되는 데이터:</strong> Google 계정 프로필 정보(이메일 주소, 이름), Firebase Auth 식별자(UID), 앱 내 생성된 개인 데이터 및 사용 기록</li>
         <li><strong>추가 보관되는 데이터:</strong> 개발자는 이용자의 개인정보를 추가로 보관하지 않고 즉시 파기합니다. (단, 관련 법령에 의해 보존 의무가 발생하는 정보가 있는 경우 해당 법정 기간 동안만 분리 보관 후 파기됩니다.)</li>
-    </ul>
-
-    <h2>7. 개인정보 보호책임자 및 문의처</h2>
-    <p>본 앱 및 서비스는 <strong>Decaffeine Soft</strong>에서 개발 및 운영합니다. 개인정보 처리 또는 계정 삭제와 관련하여 문의사항이 있으신 경우 아래의 연락처로 문의해 주시기 바랍니다.</p>
-    <ul>
-        <li><strong>개발자/앱 운영자 명칭:</strong> Decaffeine Soft</li>
-        <li><strong>문의 및 삭제 요청 이메일:</strong> <a href="mailto:decaffeinesoft@gmail.com">decaffeinesoft@gmail.com</a></li>
     </ul>
 
     <h2>7. 개인정보 보호책임자 및 문의처</h2>
